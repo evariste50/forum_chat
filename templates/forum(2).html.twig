@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forum</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ asset('assets/css/forum2.css') }}" />
+</head>
+
+<body>
+
+    <div id="bloc">
+
+        <header>
+            <div id="titre_principale">
+                <div id="logo">
+                    <img src="images/f_logo.png">
+                    <h1>bienvenu sur le forum</h1>
+                </div>
+                <!-- <h2>Discutons</h2> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('login') }}">Deconnexion</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <section id="section1">
+
+        </section>
+
+        <section id="section2">
+            <div id="zone_discussion">
+                <div id="conversation">
+
+                    <div class="user">
+                        <p class="p1">nom_premon</p>
+                        <p class="p2">zzzzzzzzzzzzzzzzz</p>
+                    </div>
+                    <div class="autres">
+                        <p class="p1">nom_premon</p>
+                        <p class="p2">zzzzzzzzzzzzzzzzz</p>
+                    </div>
+
+                </div>
+                <!--  <div id="cadre_msg"> -->
+                <div id="commentaire">
+
+                    <textarea name="commentaire" class="zone_commentaire"></textarea>
+
+                    <div>
+                        <input type="submit" name="envoie_msg" value="send" class="bouton">
+                    </div>
+                </div>
+                <!--  </div>  -->
+            </div>
+
+            <aside>
+
+                <p id="photo_profil"><img src="images/profil.png"></p>
+                <p>Nom d'utilisateur : {{ userActif.userName }} </p>
+                <p>Prenom : {{ userActif.userSurname }}</p>
+                <p>age: {{ userActif.userSurname }}</p>
+                <a href="#">Modifier les inforamations utilisateur</a>
+
+            </aside>
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

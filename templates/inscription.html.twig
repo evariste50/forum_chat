@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ asset('assets/css/inscription.css') }}" />
+
+    <title>inscription</title>
+</head>
+
+<body>
+    <div id="bloc_principale">
+        <header>
+            <p id="img_header">
+                <img src="images/f_logo.png" class="logo">
+            </p>
+
+            <p id="connexion">
+                <a href="{{ path('login') }}">Vous avez déjà un compte</a>
+            </p>
+        </header>
+
+        <section>
+            <div id="forum_logo">
+                <img src="images/f_table.png" style="width:540px; height: 392px">
+            </div>
+
+            <aside>
+                <form name="User" method="POST">
+
+                    <label class="labnom">NOM : </label><input type="text" name="userName" class="nom" required></br><br>
+
+                    <!-- <label>PRENOM : </label><input type="text" name="userSurname" class="prenom" required></br><br> -->
+
+                    <label>Email : </label><input type="email" name="userEmail" class="email" required></br><br>
+
+                    <label>Date de naissance : </label><input type="date" name="userDate" class="ddn" required></br><br>
+
+                    <label>Sexe : </label><input type="radio" name="userSexe" value="masculin" class="m">M <input type="radio" name="userSexe" value="feminin" class="f">F</br><br>
+
+                    <label>Mot de passe : </label><input type="password" name="userPassword" class="mdp" id="mdp" required><input type="checkbox" onclick="Afficher()">Afficher</br><br>
+
+                    <label>Confirmer : </label><input type="password" name="mdp" class="cmdp" id="cmdp" required></br>
+
+                    <input type="submit" name="button" value="s'enregistrer" class="enregistrer" id="enregistrer" onclick="confirm()">
+                    <input type="reset" value="Effacer" class="Effacer">
+                </form>
+            </aside>
+        </section>
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function Afficher() {
+
+        var input = document.getElementById("mdp");
+
+        if (input.type === "password") {
+            input.type = "text";
+        } else {
+            input.type = "password";
+        }
+    }
+
+    function confirm() {
+
+        var input = document.getElementById("mdp");
+        var confirm = document.getElementById("cmdp");
+        var btval = document.getElementById("enregistrer");
+
+        if (input.value === confirm.value) {
+            btval.type = "submit";
+        } else {
+            alert("mot de passe non identique");
+            btval.type = "button";
+        }
+    }
+</script>

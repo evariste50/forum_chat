@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ asset('assets/css/connexion.css') }}" />
+    <title>connexion</title>
+
+</head>
+
+<body>
+    <div id="corps">
+        <section>
+            <div>
+                <img src="images/forum_logo.png">
+            </div>
+
+            <div>
+                <form method="POST">
+                    <label class="nUtilisateur">Nom d'utilisateur : </label>
+                    <input type="text" name="userName" required><br>
+
+                    <label class="mdp">Mot de passe : </label>
+                    <input type="password" name="userPassword" id="mdp" class="inputMdp" required><br>
+
+                    <input type="checkbox" onclick="Afficher()" class="checkbox">Afficher le mot de passe<br>
+
+
+
+                    <input type="submit" name="connexion" value="Connexion" class="connexion">
+
+                    <p class="ici"> Créez un compte <a href="{{ path('registration') }}">ici</a> </p>
+                </form>
+            </div>
+
+        </section>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function Afficher() {
+
+        var input = document.getElementById("mdp");
+
+        if (input.type === "password") {
+            input.type = "text";
+        } else {
+            input.type = "password";
+        }
+    }
+</script>
